@@ -1,0 +1,71 @@
+p {
+  margin: 10px;
+}
+.container {
+  margin: 10px;
+  width: 370px;
+  background: #fcfcfc;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+}
+
+.description {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(99, 99, 105, 0.473);
+}
+
+.avatar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.name,
+.quantity {
+  font-size: 20px;
+  color: #38383a;
+}
+
+.location {
+  margin-bottom: 30px;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  font-weight: bold;
+  border-top: 1px solid rgb(164, 204, 204);
+
+  background-color: rgba(237, 245, 225, 0.37);
+  border-radius: 6px;
+}
+
+.stats li {
+  padding: 20px 0;
+  width: calc(100% / 3);
+}
+
+.stats li:not(:last-child) {
+  border-right: 1px solid rgb(164, 204, 204);
+}
+
+.stats li span {
+  display: block;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.label {
+  font-size: 14px;
+  color: rgba(50, 50, 54, 0.473);
+  font-weight: 500;
+}
