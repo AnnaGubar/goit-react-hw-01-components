@@ -36,11 +36,15 @@ Profile.propTypes = {
   username: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
-  followers: PropTypes.number.isRequired,
-  views: PropTypes.number.isRequired,
-  likes: PropTypes.number.isRequired,
+
+  // ✅ в качестве props ожидает обьект stats (игнорируется деструктуризация)
+  stats: PropTypes.object.isRequired,
+
+  // ❌
+  // followers: PropTypes.number.isRequired,
+  // views: PropTypes.number.isRequired,
+  // likes: PropTypes.number.isRequired,
 };
 
 export default Profile;
