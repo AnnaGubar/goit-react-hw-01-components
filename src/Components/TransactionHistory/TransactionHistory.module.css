@@ -1,0 +1,23 @@
+table {
+  padding: 10px;
+  width: 600px;
+  text-align: center;
+}
+
+.title {
+  padding: 15px 0;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgb(248, 248, 245);
+  background-color: rgb(33, 198, 239);
+  /* border: 1px solid white; */
+}
+
+.data {
+  color: grey;
+}
+
+.type {
+  /* text-align: left; */
+}

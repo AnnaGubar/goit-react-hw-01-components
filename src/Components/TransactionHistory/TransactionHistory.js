@@ -1,24 +1,23 @@
-// import PropTypes from 'prop-types';
-// import s from './Statistics.module.css';
+import PropTypes from 'prop-types';
+import s from './TransactionHistory.module.css';
 
-const TransactionHistory = ({ transactions }) => {
-  // const TransactionHistory = ({ id, type, amount, currency }) => {
+const TransactionHistory = ({ items }) => {
   return (
-    <table class="transaction-history">
+    <table className={s.table}>
       <thead>
         <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
+          <th className={s.title}>Type</th>
+          <th className={s.title}>Amount</th>
+          <th className={s.title}>Currency</th>
         </tr>
       </thead>
 
       <tbody>
-        {transactions.map(transaction => (
-          <tr key={transaction.id}>
-            <td>{transaction.type}</td>
-            <td>{transaction.amount}</td>
-            <td>{transaction.currency}</td>
+        {items.map(({ id, type, amount, currency }) => (
+          <tr key={id} className={s.data}>
+            <td className={s.type}>{type}</td>
+            <td>{amount}</td>
+            <td>{currency}</td>
           </tr>
         ))}
       </tbody>
@@ -26,11 +25,15 @@ const TransactionHistory = ({ transactions }) => {
   );
 };
 
-// Statistics.propTypes = {
-//   title: PropTypes.string,
-
-//   //🔆 данный тип подходит для любого вида data
-//   stats: PropTypes.any.isRequired,
-// };
+TransactionHistory.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.number.isRequired,
+      currency: PropTypes.string.isRequired,
+    }),
+  ),
+};
 
 export default TransactionHistory;
