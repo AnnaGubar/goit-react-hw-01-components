@@ -7,9 +7,9 @@ const Statistics = ({ title, stats }) => {
       {title && <h2 className={s.title}>{title}</h2>}
 
       <ul className={s.list}>
-        {stats.map(stat => (
+        {stats.map(({ id, label, percentage }) => (
           <li
-            key={stat.id}
+            key={id}
             className={s.item}
             style={{
               backgroundColor: `rgb(${getRandom(0, 255)}, ${getRandom(
@@ -18,8 +18,8 @@ const Statistics = ({ title, stats }) => {
               )}, ${getRandom(0, 255)})`,
             }}
           >
-            <span className={s.label}>{stat.label}</span>
-            <span className={s.percentage}>{stat.percentage}%</span>
+            <span className={s.label}>{label}</span>
+            <span className={s.percentage}>{percentage}%</span>
           </li>
         ))}
       </ul>
@@ -31,7 +31,15 @@ Statistics.propTypes = {
   title: PropTypes.string,
 
   //🔆 данный тип подходит для любого вида data
-  stats: PropTypes.any.isRequired,
+  // stats: PropTypes.any.isRequired,
+
+  // ✅ массив обьектов конкретной структуры
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    }),
+  ),
 };
 
 function getRandom(min, max) {

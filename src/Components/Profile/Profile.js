@@ -38,13 +38,20 @@ Profile.propTypes = {
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
 
-  // ✅ в качестве props ожидает обьект stats (игнорируется деструктуризация)
-  stats: PropTypes.object.isRequired,
+  // в качестве props ожидает обьект stats (игнорируется деструктуризация)
+  // stats: PropTypes.object.isRequired,
 
   // ❌
   // followers: PropTypes.number.isRequired,
   // views: PropTypes.number.isRequired,
   // likes: PropTypes.number.isRequired,
+
+  // ✅ раскрытие структуры обьекта
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }),
 };
 
 export default Profile;

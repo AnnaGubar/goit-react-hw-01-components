@@ -4,22 +4,17 @@ import s from './FriendList.module.css';
 const FriendList = ({ friends }) => {
   return (
     <ul className={s.list}>
-      {friends.map(friend => (
-        <li key={friend.id} className={s.item}>
-          {friend.isOnline}
-          {friend.isOnline ? (
+      {friends.map(({ id, isOnline, avatar, name }) => (
+        <li key={id} className={s.item}>
+          {isOnline}
+          {isOnline ? (
             <span className={s.online}></span>
           ) : (
             <span className={s.offline}></span>
           )}
 
-          <img
-            className={s.avatar}
-            src={friend.avatar}
-            alt="User avatar"
-            width="48"
-          />
-          <p className={s.name}>{friend.name}</p>
+          <img className={s.avatar} src={avatar} alt="User avatar" width="48" />
+          <p className={s.name}>{name}</p>
         </li>
       ))}
     </ul>
